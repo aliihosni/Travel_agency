@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Travel_agency.Models.Accompagnateur>
+
+@{
+    ViewBag.Title = "Liste des accompagnateurs";
+}
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        @ViewBag.Title
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Accueil</a></li>
+        <li class="active">@ViewBag.Title</li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <p>@ViewBag.Message</p>
+
+
+    <div class="box box-info">
+
+        <div class="box-header">
+            <h3 class="box-title">Accompagnateurs</h3>
+        </div>
+        <div class="box-body">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>
+                        @Html.ActionLink("Nouveau", "Create")
+                    </p>
+                    <table class="table table-striped">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Nom)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Prenom)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Adresse)
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nom)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Prenom)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Adresse)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Modifier", "Edit", new { id = item.NumeroAccompagnateur }) |
+                                    @Html.ActionLink("Détails", "Details", new { id = item.NumeroAccompagnateur }) |
+                                    @Html.ActionLink("Supprimer", "Delete", new { id = item.NumeroAccompagnateur })
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /.content -->
+

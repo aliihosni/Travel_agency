@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Travel_agency.Models.Circuit>
+
+@{
+    ViewBag.Title = "Liste des circuits";
+}
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        @ViewBag.Title
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Accueil</a></li>
+        <li class="active">@ViewBag.Title</li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+<p>@ViewBag.Message</p>
+
+
+<div class="box box-info">
+
+<div class="box-header">
+    <h3 class="box-title">Circuits</h3>
+</div>
+<div class="box-body">
+<div class="row">
+<div class="col-lg-12">
+<p>
+    @Html.ActionLink("Nouveau", "Create")
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Parcours.ParcoursId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Voyage.NumeroVoyage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Theme)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MoyenTransport)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Parcours.ParcoursId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Voyage.NumeroVoyage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Theme)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoyenTransport)
+            </td>
+            <td>
+                @Html.ActionLink("Modifier", "Edit", new { id=item.CircuitId }) |
+                @Html.ActionLink("Détails", "Details", new { id=item.CircuitId }) |
+                @Html.ActionLink("Supprimer", "Delete", new { id=item.CircuitId })
+            </td>
+        </tr>
+    }
+
+</table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /.content -->
+
+

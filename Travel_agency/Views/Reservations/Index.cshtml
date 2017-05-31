@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Travel_agency.Models.Reservation>
+
+@{
+    ViewBag.Title = "Liste des réservations";
+}
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        @ViewBag.Title
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Accueil</a></li>
+        <li class="active">@ViewBag.Title</li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+<p>@ViewBag.Message</p>
+
+
+<div class="box box-info">
+
+<div class="box-header">
+    <h3 class="box-title">Réservations</h3>
+</div>
+<div class="box-body">
+<div class="row">
+<div class="col-lg-12">
+<p>
+    @Html.ActionLink("Nouveau", "Create")
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.ActionLink("Modifier", "Edit", new { id=item.ReservationId }) |
+                @Html.ActionLink("Détails", "Details", new { id=item.ReservationId }) |
+                @Html.ActionLink("Supprimer", "Delete", new { id=item.ReservationId })
+            </td>
+        </tr>
+    }
+
+</table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /.content -->
+
+

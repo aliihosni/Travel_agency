@@ -14,6 +14,11 @@ namespace Travel_agency
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
+            bundles.Add(new ScriptBundle("~/admin-lte/js").Include(
+                "~/admin-lte/js/app.js",
+                "~/admin-lte/plugins/fastclick/fastclick.js"
+            ));
+
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
@@ -25,7 +30,13 @@ namespace Travel_agency
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                        "~/admin-lte/css/AdminLTE.css",
+                        "~/admin-lte/css/skins/skin-blue.css"));
+
+            bundles.Add(new StyleBundle("~/Content", "https://cdnjs.cloudflare.com/").Include(
+                "~/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"));
+
         }
     }
 }

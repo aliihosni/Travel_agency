@@ -2,41 +2,208 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <meta name="viewport">
+    <title>@ViewBag.Title - Travel Agency</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content")
     @Scripts.Render("~/bundles/modernizr")
+
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
+
+
+<body class="hold-transition skin-blue sidebar-mini" data-spy="scroll" data-target="#scrollspy">
+<div class="wrapper">
+
+    <header class="main-header">
+
+        <!-- Logo -->
+        <a href="@Url.Action("Index", "Home")" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini"><b><small>T</small></b><small>A</small></span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><b>Travel</b>Agency</span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
+            </a>
+            <!-- Navbar Right Menu -->
+            <div class="navbar-custom-menu">
+                <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                </div>
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <!-- Messages: style can be found in dropdown.less-->
+                
+                    <!-- User Account: style can be found in dropdown.less -->
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="~/Content/img/avatar2.png" class="user-image" alt="User Image">
+                            <span class="hidden-xs">
+
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- User image -->
+                            <li class="user-header">
+                                <img src="~/Content/img/avatar2.png" class="img-circle" alt="User Image">
+
+                                <p>
+                                    Bienvenue
+                                    <small>Dans le Portail Travel Agency</small>
+                                </p>
+                            </li>
+                            <!-- Menu Body -->
+
+                            <!-- Menu Footer-->
+                            <li class="user-footer">
+
+                                <div class="pull-right">
+                                    <a href="" class="btn btn-default btn-flat">Déconnexion</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- Control Sidebar Toggle Button -->
+
                 </ul>
             </div>
-        </div>
+
+        </nav>
+    </header>
+    
+    
+    
+    
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+            <!-- Sidebar user panel -->
+
+            <!-- search form -->
+            <form action="#" method="get" class="sidebar-form">
+                <div class="input-group">
+                    <input type="text" name="q" class="form-control" placeholder="Recherche...">
+                    <span class="input-group-btn">
+                        <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </form>
+            <!-- /.search form -->
+            <!-- sidebar menu: : style can be found in sidebar.less -->
+            <ul class="sidebar-menu">
+                <li class="header">NAVIGATION</li>
+
+                <li>
+                    <a href="@Url.Action("Index", "Home")">
+                        <i class="fa fa-dashboard"></i> <span>Accueil</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="@Url.Action("Index", "Voyages")">
+                        <i class="fa fa-dashboard"></i> <span>Voyage</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="@Url.Action("Index", "Circuits")">
+                        <i class="fa fa-dashboard"></i> <span>Circuit</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="@Url.Action("Index", "Sejours")">
+                        <i class="fa fa-dashboard"></i> <span>Séjour</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="@Url.Action("Index", "Parcours")">
+                        <i class="fa fa-dashboard"></i> <span>Parcours</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="@Url.Action("Index", "Reservations")">
+                        <i class="fa fa-dashboard"></i> <span>Reservations</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="@Url.Action("Index", "Hebergements")">
+                        <i class="fa fa-dashboard"></i> <span>Hébergement</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="@Url.Action("Index", "Trajets")">
+                        <i class="fa fa-dashboard"></i> <span>Trajets</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="@Url.Action("Index", "Departs")">
+                        <i class="fa fa-dashboard"></i> <span>Départs</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="@Url.Action("Index", "Clients")">
+                        <i class="fa fa-dashboard"></i> <span>Clients</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="@Url.Action("Index", "Transporteurs")">
+                        <i class="fa fa-dashboard"></i> <span>Transporteurs</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="@Url.Action("Index", "Accompagnateurs")">
+                        <i class="fa fa-dashboard"></i> <span>Accompagnateurs</span>
+                    </a>
+                </li>
+
+            </ul>
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+
+
+    @RenderBody()
+    
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+    <!-- /.content-wrapper -->
+    
+
+    <footer class="main-footer ">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 1.0.1
+            </div>
+            <strong>Copyright &copy; @DateTime.Now.Year <a target="_blank" href="http://www.fst.rnu.tn/">FST</a>.</strong> Tous droits réservés.
+</footer>
     </div>
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/admin-lte/js")
+    @Scripts.Render("~/admin-lte/plugins/fastclick/fastclick.js")
     @RenderSection("scripts", required: false)
 </body>
 </html>
